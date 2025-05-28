@@ -108,25 +108,67 @@ initKeyboard();
 // Подсветка по нажатию клавиши на физической клавиатуре
 document.onkeypress = function (event) {
   const pressed = event.key.toLowerCase();
+
+  // Удаляем предыдущую активность
   document.querySelectorAll(".keyboardsButton").forEach((btn) => {
     btn.classList.remove("active");
-    if (btn.dataset.letter === pressed) {
-      btn.classList.add("active");
-    }
   });
+
+  const targetBtn = document.querySelector(`.keyboardsButton[data-letter="${pressed}"]`);
+  if (targetBtn) {
+    targetBtn.classList.add("active");
+
+    const span = document.createElement("span");
+    span.textContent = pressed;
+    container1.appendChild(span);
+  }
 };
 
 // Подсветка по клику мыши на экранной кнопке
 document.querySelectorAll(".keyboardsButton").forEach((btn) => {
   btn.onclick = function () {
     document.querySelectorAll(".keyboardsButton").forEach((b) => {
-      b.classList.remove("active");
     });
     this.classList.add("active");
+    const span = document.createElement("span");
+      span.textContent = this.textContent;
+      container1.appendChild(span);
   };
 });
 // 
 
+// Колонки с ответами
+let currentContainer = 1;
+
+document.onkeypress = function (event) {
+  const pressed = event.key.toLowerCase();
+  handleInput(pressed);
+};
+
+document.querySelectorAll(".keyboardsButton").forEach((btn) => {
+  btn.onclick = function () {
+    const pressed = this.dataset.letter;
+    handleInput(pressed);
+  };
+});
+
+function handleInput(pressed) {
+  if (currentContainer > 5) return;
+
+  const targetBtn = document.querySelector(`.keyboardsButton[data-letter="${pressed}"]`);
+  if (targetBtn) {
+    targetBtn.classList.add("active");
+  }
+
+  const container = document.querySelector(`.container${currentContainer}`);
+  if (container) {
+    const span = document.createElement("span");
+    span.textContent = pressed;
+    container.appendChild(span);
+    currentContainer++;
+  }
+}
+// 
 
 
 

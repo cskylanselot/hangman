@@ -73,26 +73,37 @@ justify-content: center;
     width: 3rem;
     height: 3rem;
     border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
 }
 .container2{
     width: 3rem;
     height: 3rem;
     border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
 }
 .container3{
     width: 3rem;
     height: 3rem;
     border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
 }
 .container4{
     width: 3rem;
     height: 3rem;
     border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
+
 }
 .container5{
     width: 3rem;
     height: 3rem;
     border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
 }
 .keyboard {
     width: 45rem;
@@ -115,7 +126,9 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-self: center;
+    cursor: pointer;
 }
 .active{
     background: orange;
+    pointer-events: none
 }

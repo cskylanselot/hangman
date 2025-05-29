@@ -10,8 +10,6 @@ color: black;
 display: flex;
 justify-content: center;
 }
-.hungman{
-}
 .head{
     position: absolute;
     left: 26.5rem;
@@ -51,8 +49,8 @@ justify-content: center;
 }
 .mainContainer{
     font-size: 2rem;
-    width:  50rem;
-    height: 20rem;
+    width:  40rem;
+    height: 10rem;
     margin: 0 auto;
     position: absolute;
     top: 20rem;
@@ -64,7 +62,6 @@ justify-content: center;
     height: 10rem;
     top: 10rem;
     left: 50rem;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,7 +111,7 @@ justify-content: center;
     display: flex;
     position: absolute;
     left: 50rem;
-    top: 40rem;
+    top: 30rem;
 }
 .keyboardsButton{
     font-size: 2rem;
@@ -131,4 +128,12 @@ justify-content: center;
 .active{
     background: orange;
     pointer-events: none
+}
+.error{
+    font-size: 2rem;
+    position: absolute;
+    width:  40rem;
+    height: 10rem;
+    left: 50rem;
+    top: 5rem;
 }
